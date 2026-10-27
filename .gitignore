@@ -1,0 +1,7 @@
+node_modules/
+dist/
+*.sqlite
+*.sqlite.*
+*.pdf
+*.csv
+.DS_Store

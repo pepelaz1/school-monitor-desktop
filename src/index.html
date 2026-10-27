@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'"
+    />
+    <title>Школьный мониторинг</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <aside>
+      <div class="brand">
+        <span class="brand-icon">м</span>
+        <div>Школьный<br /><b>мониторинг</b></div>
+      </div>
+      <div class="eyebrow">РАБОЧЕЕ ПРОСТРАНСТВО</div>
+      <button class="nav active" data-tab="overview">
+        ◫ &nbsp; Обзор класса</button
+      ><button class="nav" data-tab="students">≡ &nbsp; Ученики и анкеты</button
+      ><button class="nav" data-tab="social">⌘ &nbsp; Матрица выборов</button
+      ><button class="nav" data-tab="history">↗ &nbsp; Динамика</button
+      ><button class="nav" data-tab="settings">⚙ &nbsp; База и правила</button>
+      <div class="aside-bottom">
+        <span class="online"></span> Локальная база<br /><small
+          >Один сотрудник · без облака</small
+        >
+      </div>
+    </aside>
+    <main>
+      <header>
+        <div>
+          <div class="eyebrow">ПСИХОЛОГИЧЕСКАЯ СЛУЖБА / МОНИТОРИНГ</div>
+          <h1 id="page-title">Обзор класса</h1>
+        </div>
+        <div class="header-actions">
+          <button id="backup" class="secondary">Резервная копия</button
+          ><span class="avatar">П</span>
+        </div>
+      </header>
+      <div id="demo-banner" class="banner">
+        Демонстрационная база · все имена и ответы вымышленные.
+        <button id="new-top">Создать пустую базу →</button>
+      </div>
+      <section class="filters">
+        <label>Класс<select id="class-select"></select></label
+        ><label class="wave-select"
+          >Обследование<select id="wave-select"></select></label
+        ><button id="add-wave" class="secondary">+ Обследование</button
+        ><button id="add-student">+ Ученик</button>
+      </section>
+      <div id="notice" class="notice" role="status"></div>
+      <div id="content"></div>
+      <footer>
+        Без нормативных порогов и диагнозов · итоговую интерпретацию выполняет
+        специалист
+      </footer>
+    </main>
+    <dialog id="editor">
+      <div class="dialog-heading">
+        <div>
+          <div class="eyebrow">КАРТОЧКА ОБСЛЕДОВАНИЯ</div>
+          <h2 id="edit-title"></h2>
+        </div>
+        <button id="close-editor" class="icon" aria-label="Закрыть">×</button>
+      </div>
+      <form id="answer-form">
+        <div id="answer-fields"></div>
+        <div id="edit-error" class="error" role="alert"></div>
+        <div class="dialog-actions">
+          <span>Пустые поля считаются пропусками</span
+          ><button type="submit">Сохранить ответы</button>
+        </div>
+      </form>
+    </dialog>
+    <dialog id="simple">
+      <form id="simple-form">
+        <h2 id="simple-title"></h2>
+        <div id="simple-fields"></div>
+        <p id="simple-error" class="error"></p>
+        <div class="dialog-actions">
+          <button type="button" id="simple-cancel" class="secondary">
+            Отмена</button
+          ><button type="submit">Сохранить</button>
+        </div>
+      </form>
+    </dialog>
+    <script type="module" src="renderer.mjs"></script>
+  </body>
+</html>
