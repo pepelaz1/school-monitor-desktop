@@ -61,7 +61,7 @@ app.whenReady().then(async () => {
     height: 900,
     minWidth: 950,
     minHeight: 650,
-    backgroundColor: "#f4f5f2",
+    backgroundColor: "#f2f5f9",
     webPreferences: {
       preload: path.join(__dirname, "preload.cjs"),
       contextIsolation: true,

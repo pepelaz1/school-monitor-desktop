@@ -70,8 +70,6 @@ async function refresh(next) {
         )
         .join("")
     : '<option value="">Нет обследований</option>';
-  $("#demo-banner").hidden = !state.demo;
-  $("#demo-banner").style.display = state.demo ? "flex" : "none";
   render();
 }
 function group() {
@@ -357,7 +355,6 @@ $("#wave-select").onchange = (e) => {
   render();
 };
 $("#backup").onclick = backup;
-$("#new-top").onclick = newDb;
 $("#add-wave").onclick = () => simple("wave");
 $("#add-student").onclick = () => simple("student");
 $("#close-editor").onclick = () => $("#editor").close();
